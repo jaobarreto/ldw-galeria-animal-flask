@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="mb-4">Galeria de Gatinhos</h1>
+    
+    <div class="row">
+        {% for gatinho in gatinhos %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="{{ url_for('static', filename='uploads/' + gatinho.arquivo) }}" class="card-img-top" alt="{{ gatinho.titulo }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ gatinho.titulo }}</h5>
+                        <p class="card-text">{{ gatinho.descricao }}</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a href="{{ url_for('editar', id=gatinho.id) }}" class="btn btn-sm btn-primary">Editar</a>
+                        <a href="{{ url_for('excluir', id=gatinho.id) }}" class="btn btn-sm btn-danger"
+                           onclick="return confirm('Tem certeza que deseja excluir este gatinho?');">Excluir</a>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="col-12">
+                <div class="alert alert-warning">Nenhum gatinho cadastrado ainda.</div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

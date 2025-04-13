@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Editar Gatinho</h1>
+
+<form method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="titulo" class="form-label">Título</label>
+        <input type="text" class="form-control" id="titulo" name="titulo" value="{{ gatinho.titulo }}" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição</label>
+        <textarea class="form-control" id="descricao" name="descricao" rows="3">{{ gatinho.descricao }}</textarea>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Imagem Atual</label><br>
+        <img src="{{ url_for('static', filename='uploads/' + gatinho.arquivo) }}" alt="Imagem atual" class="img-fluid mb-3" style="max-width: 300px;">
+    </div>
+
+    <div class="mb-3">
+        <label for="arquivo" class="form-label">Nova imagem (opcional)</label>
+        <input class="form-control" type="file" id="arquivo" name="arquivo">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

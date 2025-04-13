@@ -1,0 +1,37 @@
+body {
+    background-color: #FFFAFA;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-custom {
+    background-color: #FFA500;
+}
+
+.navbar-brand, .nav-link {
+    color: #FFFAFA !important;
+    font-weight: bold;
+}
+
+.navbar-brand img {
+    height: 32px;
+    margin-right: 10px;
+}
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    color: #FFA500;
+}
+
+.btn-primary {
+    background-color: #FFA500;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #e69500;
+}

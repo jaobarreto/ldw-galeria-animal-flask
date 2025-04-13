@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="mb-4">Enviar Foto de Gatinho</h1>
+    
+    <form method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="titulo" class="form-label">Título</label>
+            <input type="text" class="form-control" id="titulo" name="titulo" required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="descricao" class="form-label">Descrição</label>
+            <textarea class="form-control" id="descricao" name="descricao" rows="3"></textarea>
+        </div>
+        
+        <div class="mb-3">
+            <label for="arquivo" class="form-label">Foto do Gatinho</label>
+            <input type="file" class="form-control" id="arquivo" name="arquivo" accept="image/*" required>
+            <div class="form-text">Formatos aceitos: JPG, PNG, GIF</div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+{% endblock %}
